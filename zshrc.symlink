@@ -156,7 +156,7 @@ alias poop='say fartt fartt poop poop fartt'
 
 
 # Source profile (bash or otherwise)
-if [ -f "~/.profile.local" ]; then
+if [ -f ~/.profile.local ]; then
     source ~/.profile.local
 fi
 
