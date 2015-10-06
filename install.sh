@@ -2,9 +2,10 @@
 
 echo "Installing dotfiles"
 
-#echo "Initializing submodule(s)"
-#git submodule update --init --recursive
+echo "Initializing submodule(s)"
+git submodule update --init --recursive
 
+echo "Linking dotfiles"
 source install/link.sh
 
 if [ "$(uname)" == "Darwin" ]; then
@@ -19,6 +20,11 @@ if [ "$(uname)" == "Darwin" ]; then
     echo "Installing node (from nvm)"
     source install/nvm.sh
 fi
+
+echo "Installing Vim setup"
+ln -s ~/.dotfiles/vim ~/.vim
+vim -S vim/plugins.vim +PlugInstall +qa
+ln -s ~/.dotfiles/.vimrc ~/.vimrc
 
 echo "Installing NPM modules"
 sudo npm install -g eslint
