@@ -29,6 +29,7 @@ vim -S vim/plugins.vim +PlugInstall +qa
 ln -s ~/.dotfiles/.vimrc ~/.vimrc
 
 echo "Installing NPM modules"
+sudo npm install -g jshint
 sudo npm install -g eslint
 sudo npm install -g babel-eslint
 sudo npm install -g eslint-plugin-react
