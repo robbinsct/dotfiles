@@ -5,7 +5,7 @@ export ZSH=~/.dotfiles/zsh
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
-ZSH_THEME="robbyrussell"
+ZSH_THEME="random"
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
@@ -98,6 +98,7 @@ alias ....="cd ../../.."
 alias .....="cd ../../../.."
 
 alias l="ls -lah ${colorflag}"
+alias l.="ls -dahl ${colorflag} .*"
 alias la="ls -AF ${colorflag}"
 alias ll="ls -lFh ${colorflag}"
 alias lld="ls -l | grep ^d"
