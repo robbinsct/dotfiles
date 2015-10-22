@@ -49,11 +49,11 @@ HIST_STAMPS="mm/dd/yyyy"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git git-extras git-flow mvn brew colorize heroku)
+plugins=(git git-extras git-flow mvn brew colorize heroku npm node colored-man-pages)
 
 # User configuration
 
-export PATH="/Users/matthew/.dotfiles/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/bin:/sbin"
+export PATH="~/.dotfiles/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/bin:/sbin"
 # export MANPATH="/usr/local/man:$MANPATH"
 
 source $ZSH/oh-my-zsh.sh
@@ -101,7 +101,7 @@ alias l="ls -lah ${colorflag}"
 alias l.="ls -dahl ${colorflag} .*"
 alias la="ls -AF ${colorflag}"
 alias ll="ls -lFh ${colorflag}"
-alias lld="ls -l | grep ^d"
+alias lld="l -d */"
 alias rmf="rm -rf"
 
 alias cp='cp -i'

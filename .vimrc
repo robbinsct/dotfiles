@@ -42,6 +42,7 @@ set softtabstop=4               " let backspace delete indent
 set pastetoggle=<F12>           " pastetoggle (sane indentation on pastes)
 set matchpairs+=<:>             " match, to be used with %
 set comments=sl:/*,mb:*,elx:*/  " auto format comment blocks
+set backspace=indent,eol,start
 
 " Remove trailing whitespaces and ^M chars
 autocmd FileType c,cpp,java,php,javascript,python,twig,xml,yml autocmd BufWritePre <buffer> :call setline(1,map(getline(1,"$"),'substitute(v:val,"\\s\\+$","","")'))
