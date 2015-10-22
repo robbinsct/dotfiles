@@ -1,0 +1,240 @@
+<?xml version="1.0"?>
+<!--
+     This is my configuration for the app, "KeyRemap4MackBook".
+     To install, edit the file "~/Library/Application\ Support/KeyRemap4MacBook/private.xml"
+     add the following line, inside of the <root> element:
+     <include path="{{ ENV_HOME }}/.remap.xml" />
+-->
+<root>
+    <appdef>
+        <appname>RDC</appname>
+        <equal>com.microsoft.rdc</equal>
+    </appdef>
+
+    <appdef>
+        <appname>RDC-MAC</appname>
+        <equal>com.microsoft.rdc.mac</equal>
+    </appdef>
+
+    <appdef>
+        <appname>Wine</appname>
+        <equal>org.pqrs.unknownapp.wine.bin</equal>
+    </appdef>
+
+    <appdef>
+        <appname>Slack</appname>
+        <equal>com.tinyspeck.slackmacgap</equal>
+    </appdef>
+
+    <appdef>
+        <appname>iTerm</appname>
+        <equal>com.googlecode.iterm2</equal>
+    </appdef>
+
+    <item>
+        <name>Slack shortcut remaps</name>
+        <identifier>private.slackdef</identifier>
+        <only>Slack</only>
+        <autogen>
+            __KeyToKey__
+            KeyCode::J, ModifierFlag::COMMAND_L | ModifierFlag::SHIFT_L,
+            KeyCode::CURSOR_DOWN, ModifierFlag::OPTION_L
+        </autogen>
+        <autogen>
+            __KeyToKey__
+            KeyCode::K, ModifierFlag::COMMAND_L | ModifierFlag::SHIFT_L,
+            KeyCode::CURSOR_UP, ModifierFlag::OPTION_L
+        </autogen>
+        <autogen>
+            __KeyToKey__
+            KeyCode::J, ModifierFlag::COMMAND_L,
+            KeyCode::CURSOR_DOWN, ModifierFlag::OPTION_L | ModifierFlag::SHIFT_L
+        </autogen>
+        <autogen>
+            __KeyToKey__
+            KeyCode::K, ModifierFlag::COMMAND_L,
+            KeyCode::CURSOR_UP, ModifierFlag::OPTION_L | ModifierFlag::SHIFT_L
+        </autogen>
+    </item>
+
+    <item>
+        <name>iTerm Shortcuts</name>
+        <identifier>private.itermdef</identifier>
+        <only>iTerm</only>
+        <autogen>
+            __KeyToKey__
+            KeyCode::SPACE, ModifierFlag::COMMAND_L | ModifierFlag::NONE,
+            KeyCode::A, ModifierFlag::CONTROL_L
+        </autogen>
+    </item>
+
+    <item>
+        <name>MS Remote Desktop to have a more unified keyboard experience</name>
+        <!--
+            NOTES FOR REMOTE DESKTOP CONNECTION:
+
+            This configuration DOES work with the new Remote Desktop
+            connection app downloaded from the app-store.
+        -->
+        <identifier>private.rdcdef</identifier>
+        <only>RDC-MAC</only>
+        <autogen>
+            __KeyToKey__
+            KeyCode::TAB, VK_CONTROL,
+            KeyCode::TAB, ModifierFlag::COMMAND_L
+        </autogen>
+        <autogen>
+            __KeyToKey__
+            KeyCode::TAB, VK_COMMAND,
+            KeyCode::TAB, ModifierFlag::CONTROL_L
+        </autogen>
+        <autogen>
+            __KeyToKey__
+            KeyCode::BACKQUOTE, VK_CONTROL,
+            KeyCode::TAB, ModifierFlag::OPTION_L
+        </autogen>
+        <autogen>
+            __KeyToKey__
+            KeyCode::Q, ModifierFlag::CONTROL_L,
+            KeyCode::F4, ModifierFlag::OPTION_L
+        </autogen>
+        <autogen>
+            __KeyToKey__
+            KeyCode::W, ModifierFlag::CONTROL_L,
+            KeyCode::F4, ModifierFlag::CONTROL_L
+        </autogen>
+        <autogen>
+            __KeyToKey__
+            KeyCode::SPACE, ModifierFlag::CONTROL_L | ModifierFlag::SHIFT_L,
+            KeyCode::SPACE, ModifierFlag::COMMAND_L | ModifierFlag::SHIFT_L
+        </autogen>
+        <autogen>
+            __KeyToKey__
+            KeyCode::COMMA, ModifierFlag::CONTROL_L | ModifierFlag::SHIFT_L,
+            KeyCode::COMMA, ModifierFlag::COMMAND_L | ModifierFlag::SHIFT_L
+        </autogen>
+        <autogen>
+            __KeyToKey__
+            KeyCode::CURSOR_LEFT, VK_CONTROL,
+            KeyCode::HOME
+        </autogen>
+        <autogen>
+            __KeyToKey__
+            KeyCode::CURSOR_RIGHT, VK_CONTROL,
+            KeyCode::END
+        </autogen>
+        <autogen>
+            __KeyToKey__
+            KeyCode::CURSOR_LEFT, ModifierFlag::OPTION_L,
+            KeyCode::CURSOR_LEFT, ModifierFlag::CONTROL_L
+        </autogen>
+        <autogen>
+            __KeyToKey__
+            KeyCode::CURSOR_RIGHT, ModifierFlag::OPTION_L,
+            KeyCode::CURSOR_RIGHT, ModifierFlag::CONTROL_L
+        </autogen>
+        <autogen>
+            __KeyToKey__
+            KeyCode::J, ModifierFlag::CONTROL_L | ModifierFlag::SHIFT_L,
+            KeyCode::TAB, ModifierFlag::CONTROL_L
+        </autogen>
+        <autogen>
+            __KeyToKey__
+            KeyCode::K, ModifierFlag::CONTROL_L | ModifierFlag::SHIFT_L,
+            KeyCode::TAB, ModifierFlag::CONTROL_L | ModifierFlag::SHIFT_L
+        </autogen>
+        <!-- I don't know why these don't work
+        <autogen>
+            __KeyToKey__
+            KeyCode::CURSOR_LEFT, VK_OPTION,
+            KeyCode::CURSOR_LEFT, ModifierFlag::CONTROL_L
+        </autogen>
+        <autogen>
+            __KeyToKey__
+            KeyCode::CURSOR_RIGHT, VK_OPTION,
+            KeyCode::CURSOR_RIGHT, ModifierFlag::CONTROL_L
+        </autogen>
+        -->
+        <autogen>
+            __KeyToKey__
+            KeyCode::COMMAND_L,
+            KeyCode::CONTROL_L
+        </autogen>
+        <autogen>
+            __KeyToKey__
+            KeyCode::CONTROL_L,
+            KeyCode::COMMAND_L
+        </autogen>
+    </item>
+
+    <item>
+        <name>Wine to have a more unified keyboard experience</name>
+        <identifier>private.winedef</identifier>
+        <only>Wine</only>
+        <autogen>
+            __KeyToKey__
+            KeyCode::TAB, VK_CONTROL,
+            KeyCode::TAB, ModifierFlag::COMMAND_L
+        </autogen>
+        <autogen>
+            __KeyToKey__
+            KeyCode::TAB, VK_COMMAND,
+            KeyCode::TAB, ModifierFlag::CONTROL_L
+        </autogen>
+        <autogen>
+            __KeyToKey__
+            KeyCode::BACKQUOTE, VK_CONTROL,
+            KeyCode::TAB, ModifierFlag::OPTION_L
+        </autogen>
+        <autogen>
+            __KeyToKey__
+            KeyCode::Q, ModifierFlag::CONTROL_L,
+            KeyCode::Q, ModifierFlag::COMMAND_L | ModifierFlag::OPTION_L
+        </autogen>
+        <autogen>
+            __KeyToKey__
+            KeyCode::W, ModifierFlag::CONTROL_L,
+            KeyCode::F4, ModifierFlag::CONTROL_L
+        </autogen>
+        <autogen>
+            __KeyToKey__
+            KeyCode::SPACE, ModifierFlag::CONTROL_L | ModifierFlag::SHIFT_L,
+            KeyCode::SPACE, ModifierFlag::COMMAND_L | ModifierFlag::SHIFT_L
+        </autogen>
+        <autogen>
+            __KeyToKey__
+            KeyCode::COMMA, ModifierFlag::CONTROL_L | ModifierFlag::SHIFT_L,
+            KeyCode::COMMA, ModifierFlag::COMMAND_L | ModifierFlag::SHIFT_L
+        </autogen>
+        <autogen>
+            __KeyToKey__
+            KeyCode::CURSOR_LEFT, VK_CONTROL,
+            KeyCode::HOME
+        </autogen>
+        <autogen>
+            __KeyToKey__
+            KeyCode::CURSOR_RIGHT, VK_CONTROL,
+            KeyCode::END
+        </autogen>
+        <autogen>
+            __KeyToKey__
+            KeyCode::CURSOR_LEFT, ModifierFlag::OPTION_L,
+            KeyCode::CURSOR_LEFT, ModifierFlag::CONTROL_L
+        </autogen>
+        <autogen>
+            __KeyToKey__
+            KeyCode::CURSOR_RIGHT, ModifierFlag::OPTION_L,
+            KeyCode::CURSOR_RIGHT, ModifierFlag::CONTROL_L
+        </autogen>
+        <autogen>
+            __KeyToKey__
+            KeyCode::COMMAND_L,
+            KeyCode::CONTROL_L
+        </autogen>
+        <autogen>
+            __KeyToKey__
+            KeyCode::CONTROL_L,
+            KeyCode::COMMAND_L
+        </autogen>
+    </item>
+</root>
