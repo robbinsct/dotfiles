@@ -22,6 +22,7 @@ Plug 'pangloss/vim-javascript', { 'for': 'javascript' }
 Plug 'moll/vim-node', { 'for': 'javascript' }
 Plug 'jelera/vim-javascript-syntax', { 'for': 'javascript' }
 Plug 'elzr/vim-json', { 'for': 'json' }
+Plug 'kchmck/vim-coffee-script'
 
 " css and preprocessors
 Plug 'cakebaker/scss-syntax.vim', { 'for': 'scss' }

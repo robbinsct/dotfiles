@@ -81,10 +81,12 @@ let g:signify_sign_delete            = '-'
 " #Control
 " ---------------------------------------------------------------------------------
 set mouse=a "Use the Mouse
-set clipboard=exclude:.* "Kill unnamed yank mapping to clipboard
+if !has("nvim")
+    set clipboard=exclude:.* "Kill unnamed yank mapping to clipboard
+    set ttymouse=xterm2 "Needed to drag splits in tmux
+endif
 let mapleader=' ' "Use the space as the leader key
 set ttyfast
-set ttymouse=xterm2 "Needed to drag splits in tmux
 
 "Editor...
 set virtualedit=onemore "Allow for cursor beyond last character
@@ -133,6 +135,13 @@ set directory=~/.vim/swap
 imap jj <esc>j
 imap kk <esc>k
 imap hh <esc>h
+
+"Terminal mode version (nvim)
+if has("nvim")
+    tmap jj <C-\><C-n>j
+    tmap kk <C-\><C-n>k
+    tmap hh <C-\><C-n>h
+endif
 
 "Easier moving/resizing in windows
 map <leader>j <C-W>j
