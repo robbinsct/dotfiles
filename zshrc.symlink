@@ -53,7 +53,7 @@ plugins=(git git-extras git-flow mvn brew colorize heroku npm node colored-man-p
 
 # User configuration
 
-export PATH="~/.dotfiles/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/bin:/sbin"
+export PATH=$HOME/.dotfiles/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/bin:/sbin
 # export MANPATH="/usr/local/man:$MANPATH"
 
 source $ZSH/oh-my-zsh.sh
