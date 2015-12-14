@@ -185,6 +185,9 @@ defaults write com.apple.Safari IncludeInternalDebugMenu -bool true
 # defaults write com.apple.loginwindow TALLogoutSavesState -bool false
 # defaults write com.apple.loginwindow LoginwindowLaunchesRelaunchApps -bool false
 
+echo "Disable reopen of windows when restarting machine"
+defaults write -g ApplePersistence -bool no
+
 # echo "Enable Dashboard dev mode (allows keeping widgets on the desktop)"
 # defaults write com.apple.dashboard devmode -bool true
 

@@ -103,7 +103,7 @@ set wildmode=list:longest,full  " command <Tab> completion, list matches, then l
 set incsearch "Show search results as you type
 set ignorecase
 set smartcase
-
+set wildignorecase
 
 " ---------------------------------------------------------------------------------
 " #State
@@ -132,15 +132,19 @@ set directory=~/.vim/swap
 " #Mappings
 " ---------------------------------------------------------------------------------
 "Easier escapes to keep us on home-row
-imap jj <esc>j
-imap kk <esc>k
-imap hh <esc>h
+imap jj <esc>
+imap kk <esc>
+imap hh <esc>
 
 "Terminal mode version (nvim)
 if has("nvim")
-    tmap jj <C-\><C-n>j
-    tmap kk <C-\><C-n>k
-    tmap hh <C-\><C-n>h
+    tmap <Space>hj <C-\><C-n><C-W>hj
+    tmap <Space>hk <C-\><C-n><C-W>hk
+    tmap <Space>kj <C-\><C-n><C-W>kj
+    tmap <Space>kk <C-\><C-n><C-W>kk
+    tmap jj <C-\><C-n>
+    tmap kk <C-\><C-n>
+    tmap hh <C-\><C-n>
 endif
 
 "Easier moving/resizing in windows
