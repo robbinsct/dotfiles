@@ -82,7 +82,7 @@ let g:signify_sign_delete            = '-'
 " ---------------------------------------------------------------------------------
 set mouse=a "Use the Mouse
 if !has("nvim")
-    set clipboard=exclude:.* "Kill unnamed yank mapping to clipboard
+    "set clipboard=exclude:.* "Kill unnamed yank mapping to clipboard
     set ttymouse=xterm2 "Needed to drag splits in tmux
 endif
 let mapleader=' ' "Use the space as the leader key

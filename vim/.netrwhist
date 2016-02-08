@@ -1,0 +1,10 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhist_cnt =8
+let g:netrw_dirhist_1='/Users/matthew/butter/.dotfiles-old/.config'
+let g:netrw_dirhist_2='/Users/matthew/butter/.dotfiles-old/.config/base16-shell'
+let g:netrw_dirhist_3='/Volumes/R/FinalAssembly/PROJECTS/Canada_USA_Mexico/United_States/Obituaries/2333694_Newsbank_GEDx'
+let g:netrw_dirhist_4='/Volumes/R/FinalAssembly/PROJECTS/Canada_USA_Mexico/United_States/Obituaries/2333694_Newsbank_GEDx/3-table-normalize'
+let g:netrw_dirhist_5='/Volumes/R/FinalAssembly/PROJECTS/Canada_USA_Mexico/United_States/Obituaries/2333694_Newsbank_GEDx/Polished Steps'
+let g:netrw_dirhist_6='/Volumes/R/FinalAssembly/PROJECTS/Canada_USA_Mexico/United_States/Obituaries/2333694_Newsbank_GEDx/newsbank_gedx_sql'
+let g:netrw_dirhist_7='/Volumes/R/FinalAssembly/PROJECTS/Canada_USA_Mexico/United_States/Obituaries/2333694_Newsbank_GEDx/SqlLoader'
+let g:netrw_dirhist_8='/Volumes/R/FinalAssembly/PROJECTS/Canada_USA_Mexico/United_States/Obituaries/2333694_Newsbank_GEDx/newsbank_gedx_sql'
