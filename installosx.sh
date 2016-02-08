@@ -93,7 +93,7 @@ echo "Set a blazingly fast keyboard repeat rate"
 defaults write NSGlobalDomain KeyRepeat -int 2
 
 echo "Set a shorter Delay until key repeat"
-defaults write NSGlobalDomain InitialKeyRepeat -int 15
+defaults write NSGlobalDomain InitialKeyRepeat -int 30
 
 #echo "Disable auto-correct"
 #defaults write NSGlobalDomain NSAutomaticSpellingCorrectionEnabled -bool false
@@ -184,6 +184,9 @@ defaults write com.apple.Safari IncludeInternalDebugMenu -bool true
 # This works, although the checkbox will still appear to be checked.
 # defaults write com.apple.loginwindow TALLogoutSavesState -bool false
 # defaults write com.apple.loginwindow LoginwindowLaunchesRelaunchApps -bool false
+
+echo "Disable reopen of windows when restarting machine"
+defaults write -g ApplePersistence -bool no
 
 # echo "Enable Dashboard dev mode (allows keeping widgets on the desktop)"
 # defaults write com.apple.dashboard devmode -bool true
