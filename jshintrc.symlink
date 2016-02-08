@@ -2,13 +2,13 @@
     "browser": true,
     "camelcase": true,
     "couch": false,
-    "curly": true,
+    "curly": false,
     "debug": false,
     "devel": true,
     "dojo": false,
     "eqeqeq": true,
     "eqnull": true,
-    "es5": true,
+    "esversion": 6,
     "esnext": false,
     "evil": false,
     "expr": true,
@@ -63,5 +63,6 @@
         "define": true
     },
     "quotmark": true,
-    "maxcomplexity": 10
+    "maxcomplexity": 10,
+    "-W032": false
 }
