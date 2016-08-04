@@ -92,6 +92,7 @@ set ttyfast
 set virtualedit=onemore "Allow for cursor beyond last character
 set splitbelow
 set splitright
+set diffopt+=vertical
 set winheight=10
 set winminheight=3
 set scrolljump=5                " lines to scroll when cursor leaves screen

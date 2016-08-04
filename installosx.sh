@@ -61,6 +61,9 @@ defaults write com.apple.finder ShowPathbar -bool true
 echo "Show Status bar in Finder"
 defaults write com.apple.finder ShowStatusBar -bool true
 
+echo "Enable text selection in finder quickLook"
+defaults write com.apple.finder QLEnableTextSelection -bool YES
+
 # echo "Expand print panel by default"
 # defaults write NSGlobalDomain PMPrintingExpandedStateForPrint -bool true
 
