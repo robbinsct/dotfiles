@@ -2,6 +2,7 @@ call plug#begin('~/.vim/plugged')
 
 " Look/Feel
 Plug 'altercation/vim-colors-solarized' "Color scheme
+Plug 'ayu-theme/ayu-vim' "New color scheme
 Plug 'vim-airline/vim-airline' "Fancy Status Line
 Plug 'vim-airline/vim-airline-themes' "Fancy Status Line
 "Plug 'chriskempson/base16-vim'
@@ -25,8 +26,7 @@ Plug 'pangloss/vim-javascript', { 'for': 'javascript' }
 Plug 'moll/vim-node', { 'for': 'javascript' }
 Plug 'jelera/vim-javascript-syntax', { 'for': 'javascript' }
 Plug 'ternjs/tern_for_vim', { 'for': 'javascript' }
-Plug 'helino/vim-json', { 'for': 'json' }
-"Plug 'elzr/vim-json', { 'for': 'json' } //alternative?
+Plug 'elzr/vim-json', { 'for': 'json' }
 Plug 'kchmck/vim-coffee-script'
 
 " css and preprocessors
