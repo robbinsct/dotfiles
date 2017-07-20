@@ -1,61 +1,80 @@
-#### COLOUR
 
-tm_icon="♟"
-tm_color_active=colour213
-tm_color_inactive=colour241
-tm_color_feature=colour4
-tm_color_music=colour203
+icon="✪"
+#### COLORs
+color_accent=colour125
+color_active=colour240
+color_inactive=colour235
+color_dark=colour233
+color_light=colour243
+color_white=colour255
+color_music=colour75
 
-# separators
-tm_separator_left_bold="◀"
-tm_separator_left_thin="❮"
-tm_separator_right_bold="▶"
-tm_separator_right_thin="❯"
+tm_spotify="#[fg=$color_music]#(osascript ~/.dotfiles/applescripts/spotify.scpt)"
+tm_itunes="#[fg=$color_music]#(osascript ~/.dotfiles/applescripts/itunes.scpt)"
+tm_rdio="#[fg=$color_music]#(osascript ~/.dotfiles/applescripts/rdio.scpt)"
 
-set -g status-left-length 32
+# Status update interval
+set -g status-interval 1
+
+# Basic status bar colors
+set -g status-fg $color_white
+set -g status-bg $color_inactive
+
+# Left side of status bar
+set -g status-left-bg $color_inactive
+set -g status-left-fg $color_light
+set -g status-left-length 40
+set -g status-left "#[fg=$color_dark,bg=$color_accent,bold] $icon #S #[fg=$color_accent,bg=$color_active,nobold]#[fg=$color_dark,bg=$color_active] #{session_width}x#{session_height}  #[fg=$color_active,bg=$color_inactive]#[fg=$color_active,bg=$color_inactive] "
+
+# Right side of status bar
+set -g status-right-bg $color_dark
+set -g status-right-fg $color_light
 set -g status-right-length 150
-set -g status-interval 5
+set -g status-right "#[fg=$color_active,bg=$color_inactive] $tm_itunes$tm_spotify #[fg=$color_active,bg=$color_inactive]#[fg=$color_dark,bg=$color_active] #{pane_current_command} #[fg=$color_accent,bg=$color_active]#[fg=$color_dark,bg=$color_accent,bold] #h "
 
+# Window status
+set -g window-status-format "  #[fg=$color_light]#W  "
+set -g window-status-current-format "#[fg=$color_inactive,bg=black]#[fg=$color_accent,bold] #W #[fg=$color_inactive,bg=black,nobold]"
 
-# default statusbar colors
-# set-option -g status-bg colour0
-set-option -g status-fg $tm_color_active
-set-option -g status-bg default
-set-option -g status-attr default
+# Current window status
+set -g window-status-current-bg $color_accent
+set -g window-status-current-fg $color_inactive
 
-# default window title colors
-set-window-option -g window-status-fg $tm_color_inactive
-set-window-option -g window-status-bg default
-set -g window-status-format "#I #W"
+# Window with activity status
+set -g window-status-activity-bg $color_music # fg and bg are flipped here due to
+set -g window-status-activity-fg $color_dark # a bug in tmux
 
-# active window title colors
-set-window-option -g window-status-current-fg $tm_color_active
-set-window-option -g window-status-current-bg default
-set-window-option -g  window-status-current-format "#[bold]#I #W"
+# Window separator
+set -g window-status-separator ""
 
-# pane border
-set-option -g pane-border-fg $tm_color_inactive
-set-option -g pane-active-border-fg $tm_color_active
+# Window status alignment
+set -g status-justify left
 
-# message text
-set-option -g message-bg default
-set-option -g message-fg $tm_color_active
+# Pane border
+set -g pane-border-bg default
+set -g pane-border-fg $color_active
 
-# pane number display
-set-option -g display-panes-active-colour $tm_color_active
-set-option -g display-panes-colour $tm_color_inactive
+# Active pane border
+set -g pane-active-border-bg default
+set -g pane-active-border-fg $color_accent
 
-# clock
-set-window-option -g clock-mode-colour $tm_color_active
+# Pane number indicator
+set -g display-panes-colour $color_dark
+set -g display-panes-active-colour $color_light
 
-tm_spotify="#[fg=$tm_color_music]#(osascript ~/.dotfiles/applescripts/spotify.scpt)"
-tm_itunes="#[fg=$tm_color_music]#(osascript ~/.dotfiles/applescripts/itunes.scpt)"
-tm_rdio="#[fg=$tm_color_music]#(osascript ~/.dotfiles/applescripts/rdio.scpt)"
-tm_battery="#(~/.dotfiles/bin/battery_indicator.sh)"
+# Clock mode
+set -g clock-mode-colour $color_accent
+set -g clock-mode-style 24
 
-tm_date="#[fg=$tm_color_inactive] %R %d %b"
-tm_host="#[fg=$tm_color_feature,bold]#h"
-tm_session_name="#[fg=$tm_color_feature,bold]$tm_icon #S"
+# Message
+set -g message-bg $color_accent
+set -g message-fg black
 
-set -g status-left $tm_session_name' '
-set -g status-right $tm_itunes' '$tm_rdio' '$tm_spotify' '$tm_date' '$tm_host
+# Command message
+set -g message-command-bg $color_dark
+set -g message-command-fg black
+
+# Mode
+set -g mode-bg $color_accent
+set -g mode-fg $color_white
+

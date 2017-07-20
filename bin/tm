@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 # export PATH=$PATH:/usr/local/bin
 
 # abort if we're already inside a TMUX session
@@ -8,7 +8,7 @@
 
 # present menu for user to choose which workspace to open
 PS3="Please choose your session: "
-options=($(tmux list-sessions -F "#S") "New Session")
+options=("New Session" $(tmux list-sessions -F "#S") "Nevermind")
 echo " "
 echo "Available sessions"
 echo "------------------"
@@ -18,7 +18,15 @@ do
   case $opt in
     "New Session")
       read -p "Enter new session name: " SESSION_NAME
-      tmux new -s "$SESSION_NAME"
+      read -p "First Window name (Window1):" WINDOW
+      WINDOW=${WINDOW:-"Window1"}
+      echo $WINDOW
+      tmux new-session -d -s "$SESSION_NAME"
+      tmux rename-window -t "$SESSION_NAME":1 "$WINDOW"
+      tmux attach -t "$SESSION_NAME"
+      break
+      ;;
+    "Nevermind")
       break
       ;;
     *)

@@ -21,12 +21,12 @@ Plug 'Raimondi/delimitMate' "Auto-closing of parenthesis and stuff
 Plug 'Valloric/YouCompleteMe' "Code completion
 
 " javascript
-Plug 'mxw/vim-jsx', { 'for': 'jsx' }
-Plug 'pangloss/vim-javascript', { 'for': 'javascript' }
+Plug 'mxw/vim-jsx'
+Plug 'pangloss/vim-javascript'
 Plug 'moll/vim-node', { 'for': 'javascript' }
-Plug 'jelera/vim-javascript-syntax', { 'for': 'javascript' }
-Plug 'ternjs/tern_for_vim', { 'for': 'javascript' }
-Plug 'elzr/vim-json', { 'for': 'json' }
+"Plug 'jelera/vim-javascript-syntax', { 'for': 'javascript' }
+Plug 'ternjs/tern_for_vim'
+"Plug 'elzr/vim-json', { 'for': 'json' }
 Plug 'kchmck/vim-coffee-script'
 
 " css and preprocessors

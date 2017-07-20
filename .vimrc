@@ -203,7 +203,8 @@ map <Leader>= <C-w>=
 map zl zL
 map zh zH
 
-
+" Fix the placement of the cursor on escape
+inoremap <silent> <Esc> <C-O>:stopinsert<CR>
 " ---------------------------------------------------------------------------------
 " #Syntax
 " ---------------------------------------------------------------------------------
@@ -218,6 +219,26 @@ let g:syntastic_javascript_checkers = ['eslint']
 "JSX Options
 let g:jsx_ext_required = 0 " Allow JSX in normal JS files
 
+" ---------------------------------------------------------------------------------
+" #iTerm
+" ---------------------------------------------------------------------------------
+" Change cursor shape between insert and normal mode in iTerm2.app
+if $TERM_PROGRAM =~ "iTerm"
+    if exists('$TMUX')
+        let &t_SI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=1\x7\<Esc>\\"
+        let &t_SR = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=2\x7\<Esc>\\"
+        let &t_EI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=0\x7\<Esc>\\"
+        let &t_EI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=0\x7\<Esc>\\"
+        autocmd VimEnter * : silent exec "!printf '\033Ptmux;\033\033]50;CursorShape=0\007\033\\'"
+        autocmd VimLeave * : silent exec "!printf '\033Ptmux;\033\033]50;CursorShape=1\007\033\\'"
+    else
+        let &t_SI = "\<Esc>]50;CursorShape=1\x7"
+        let &t_SR = "\<Esc>]50;CursorShape=2\x7"
+        let &t_EI = "\<Esc>]50;CursorShape=0\x7"
+        autocmd VimEnter * : silent exec "!printf '\033]50;CursorShape=0\x7'"
+        autocmd VimLeave * : silent exec "!printf '\033]50;CursorShape=1\x7'"
+    endif
+endif
 
 " ---------------------------------------------------------------------------------
 " #Finish
