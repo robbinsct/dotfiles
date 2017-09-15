@@ -23,17 +23,6 @@ if [ "$(uname)" == "Darwin" ]; then
     source install/nvm.sh
 fi
 
-echo "Installing Vim setup"
-ln -s ~/.dotfiles/vim ~/.vim
-vim -S vim/plugins.vim +PlugInstall +qa
-ln -s ~/.dotfiles/.vimrc ~/.vimrc
-
-echo "Installing NPM modules"
-sudo npm install -g jshint
-sudo npm install -g eslint
-sudo npm install -g babel-eslint
-sudo npm install -g eslint-plugin-react
-
 echo "Configuring zsh as default shell"
 chsh -s $(which zsh)
 

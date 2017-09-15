@@ -1,7 +1,15 @@
 # gitconfig
+[core]
+    excludesfile = /Users/robbinsct/.gitignore_global
+[difftool "sourcetree"]
+    cmd = opendiff \"$LOCAL\" \"$REMOTE\"
+    path = 
+[mergetool "sourcetree"]
+    cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+    trustExitCode = true
 [user]
-    name = Matthew Larson
-    email = matthewmatician@gmail.com
+    name = Tom Robbins
+    email = robbinsct@familysearch.org
 [color]
     diff = auto
     status = auto
@@ -27,10 +35,5 @@
     default = simple
 [branch]
     autosetuprebase = always
-[core]
-    editor = vim
-    excludesfile = ~/.gitignore_global
-[credential]
-	helper = osxkeychain
 [url "https://"]
 	insteadOf = git://
