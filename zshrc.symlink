@@ -158,3 +158,5 @@ if [ -f ~/.profile.local ]; then
     source ~/.profile.local
 fi
 
+# Export maven path
+export PATH=$PATH:/opt/apache-maven/bin
